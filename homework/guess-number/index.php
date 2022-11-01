@@ -1,6 +1,6 @@
 <?php
 
-$n = rand(1, 8);
+$n = $_POST['num'];
 $count = 0; // Кількість спроб
 $text = ""; // Текст підсказки
 $nameErr = ""; // Повідомлення про помилку
@@ -50,4 +50,5 @@ echo $n;
   <input type="hidden" name="hidden" size="50" value="<?= $count ?>">
   <input name="Submit" type="submit" value="Відправити"><br/>
   <input name="Clear" type="submit" value="Заново">
+  <input type="hidden" name="num" size="50" value="<?= rand(1, 8) ?>">
 </form>
