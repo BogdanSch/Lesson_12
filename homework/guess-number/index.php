@@ -39,7 +39,7 @@ if (isset($_POST['Submit'])) { // Якщо натиснута кнопка 'Subm
   }
 }
 
-echo $n;
+// echo $n;
 
 ?>
 

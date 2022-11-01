@@ -19,7 +19,7 @@
             $password = $_POST ['pass'];
         }
         if ($valid_form == true) { 
-            header("Location: user.php?login=$login&password=$password");
+            header("Location: user.php?login=$login");
             echo "Вітаємо Вас, $name!";
         }
         $valid_form = false;
