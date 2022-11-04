@@ -39,9 +39,6 @@ if (isset($_POST['submit'])) { // Якщо натиснута кнопка 'Subm
     }
   }
 }
-
-echo $n;
-
 ?>
 
 <p>Вгадай число от 1 до 8:</p>
@@ -49,6 +46,7 @@ echo $n;
   <?= $text ?><br/>
   <input type="text" name="my_number" size="5"><?= $nameErr ?><br/>
   <input type="hidden" name="hidden" size="50" value="<?= $count ?>">
+  <input type="hidden" name="number" size="50" value="<?= $n ?>">
   <input name="Submit" type="submit" value="Відправити"><br/>
   <input name="Clear" type="submit" value="Заново">
 </form>
