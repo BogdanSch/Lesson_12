@@ -1,8 +1,9 @@
 <?php
+
 $n = rand(1, 8);
-$count = 0;
-$text = "";
-$nameErr = "";
+$count = 0; // Кількість спроб
+$text = ""; // Текст підсказки
+$nameErr = ""; // Повідомлення про помилку
 
 if (isset($_POST['clear'])) { // Якщо натиснута кнопка 'Clear'
     unset($_POST); // Видалення массиву $_POST
@@ -38,26 +39,16 @@ if (isset($_POST['submit'])) { // Якщо натиснута кнопка 'Subm
     }
   }
 }
+
+echo $n;
+
 ?>
 
-<!DOCTYPE html>
-<html lang="ua">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guess the number</title>
-</head>
-<body>
-  <p>Вгадай число от 1 до 8:</p>
-  <form action="<?= $_SERVER['PHP_SELF']?>" name="myform" method="POST">
-    <?= $text ?><br/>
-    <input type="number" name="my_number" size="5"><?= $nameErr ?><br/>
-    <input type="hidden" name="hidden" size="50" value="<?= $count ?>">
-    <input type="hidden" name="number" size="50" value="<?= $n ?>">
-    <input name="submit" type="submit" value="Відправити"><br/>
-    <input name="clear" type="submit" value="Заново">
-  </form>
-</body>
-</html>
-
+<p>Вгадай число от 1 до 8:</p>
+<form action="<?= $_SERVER['PHP_SELF']?>" name="myform" method="POST">
+  <?= $text ?><br/>
+  <input type="text" name="my_number" size="5"><?= $nameErr ?><br/>
+  <input type="hidden" name="hidden" size="50" value="<?= $count ?>">
+  <input name="Submit" type="submit" value="Відправити"><br/>
+  <input name="Clear" type="submit" value="Заново">
+</form>

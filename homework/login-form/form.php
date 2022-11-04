@@ -20,19 +20,9 @@
         } else {
             $password = $_POST ['pass'];
         }
-        if ($valid_form) {
-            $current_user = [
-                "$login" => "$password"
-            ];
-            //$logins = (array_intersect_key($users, $current_user));
-            $passwords = array_intersect($users, $current_user);
-
-            if($passwords){
-                header("Location: user.php?login=$login");
-            }
-            else{
-                echo "<h1>We can't find this user!</h1>";
-            }
+        if ($valid_form == true) { 
+            header("Location: user.php?login=$login&password=$password");
+            echo "Вітаємо Вас, $name!";
         }
         $valid_form = false;
     }
