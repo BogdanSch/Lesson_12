@@ -24,10 +24,9 @@
             $current_user = [
                 $login => $password
             ];
-            $passwords = array_intersect($current_user, $users);
             $logins = array_intersect_key($current_user, $users);
 
-            if ($passwords && $logins){
+            if ($logins && $users[$login] == $password){
                 header("Location: user.php?login=$login");
             } else{
                 echo "<h1>We can't find this user!</h1>";
